@@ -29,7 +29,7 @@ const Register = () => {
       return alert("Debes diligenciar todos los campos");
     } else {
       //hacer la peticion a la url del backend
-      postData("http://localhost:3001/api/register", {
+      postData("https://deployback-production-018f.up.railway.app/api/register", {
         name,
         surname,   
         email,

@@ -24,7 +24,7 @@ const Login = () => {
       return alert("Debes diligenciar todos los campos");
     }else{
        //hacer la peticion a la url del backend
-    postData("http://localhost:3001/api/login", {
+    postData("https://deployback-production-018f.up.railway.app/api/login", {
       email,
       password,
       getToken,
