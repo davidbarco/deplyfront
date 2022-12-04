@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
 	let verificarLocal = JSON.parse(localStorage.getItem('usuario'));
 	
 	return (
-		<div className="Layout" style={{backgroundColor:"#000f18",width: '100%', height: '100%', }}>
+		<div className="Layout" style={{backgroundColor:"#000f18",width: '100%', height: '100vh', }}>
 
 			{/*si hay un usuario en sesiom, debe pintar el header, sino lo quita. ejemplo: cuando se ha cerrado sesion n debe aparecer el header.*/}
 			{verificarLocal && <Header></Header> }

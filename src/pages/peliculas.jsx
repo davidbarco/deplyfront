@@ -24,7 +24,9 @@ const Peliculas = () => {
     <>
       <div
         className="peliculas"
-        style={{}}
+        style={{
+          backgroundColor: "black"
+        }}
       >
         {peliculas.map((peliculas) => (
           <div
@@ -33,7 +35,7 @@ const Peliculas = () => {
             style={{
               width: "18rem",
               margin: "20px",
-              boxShadow: "0px 0px 14px 3px #5d14a6a8",
+              boxShadow: "0px 0px 14px 3px #5d14a6a8"
             }}
           >
             <img
