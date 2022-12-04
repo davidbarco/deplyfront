@@ -21,7 +21,7 @@ const CrearCategoria = () => {
         return alert("Debes diligenciar todos los campos");
       } else {
         //hacer la peticion a la url del backend
-        postData("http://localhost:3001/api/createCategory", {name,token1})
+        postData("https://deployback-production-018f.up.railway.app/api/createCategory", {name,token1})
         .then((data) => {
             if(data.status === "success") {
                 alert("categoria guardada correctamente");

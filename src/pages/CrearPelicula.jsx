@@ -11,7 +11,13 @@ const CrearPelicula = () => {
 
   //cargar las peliculas al entrar al componente.
   useEffect(() => {
-    fetch("http://localhost:3001/api/categories")
+    fetch("https://deployback-production-018f.up.railway.app/api/categories", {
+      method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      },
+    })
       .then((response) => response.json())
       .then((data) => setCategorias(data.categories));
   }, []);
@@ -38,7 +44,7 @@ const CrearPelicula = () => {
       return alert("Debes diligenciar todos los campos");
     } else {
       //hacer la peticion a la url del backend
-      postData("http://localhost:3001/api/createMovie", {
+      postData("https://deployback-production-018f.up.railway.app/api/createMovie", {
         name,
         año,
         id_categoria,
@@ -54,13 +60,15 @@ const CrearPelicula = () => {
           let headersList = {
             "Accept": "*/*",
             "User-Agent": "Thunder Client (https://www.thunderclient.com)",
-            "Authorization": token1
+            "Authorization": token1,
+            'Access-Control-Allow-Origin': '*'
            }
 
-          fetch(`http://localhost:3001/api/upload-image/${idPelicula}`, { 
+          fetch(`https://deployback-production-018f.up.railway.app/api/upload-image/${idPelicula}`, { 
           method: "POST",
+          mode: 'cors',
           body: formData,
-          headers: headersList
+          headers: headersList,
         }).then(response => response.json())
         .then((data) => {
             //si data devuelve: listo. quiere decir que recibio todo bien y puede redirigir al componente de peliculas

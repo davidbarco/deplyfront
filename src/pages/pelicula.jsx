@@ -9,7 +9,13 @@ const Pelicula = () => {
 
   //cargar las peliculas al entrar al componente metodo get.
   useEffect(() => {
-    fetch(`http://localhost:3001/api/movie/${id}`)
+    fetch(`https://deployback-production-018f.up.railway.app/api/movie/${id}`, {
+      method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      },
+    })
       .then((response) => response.json())
       .then((data) => setPelicula(data.movie));
   }, [id]);
@@ -30,9 +36,9 @@ const Pelicula = () => {
               boxShadow: "0px 0px 14px 3px #5d14a6a8",
             }}
           >
-            <video width="100%" height="100%" controls poster={`http://localhost:3001/api/image/${pelicula.image}`}>
+            <video width="100%" height="100%" controls poster={`https://deployback-production-018f.up.railway.app/api/image/${pelicula.image}`}>
               <source
-                src={`http://localhost:3001/api/video/${pelicula.video}`}
+                src={`https://deployback-production-018f.up.railway.app/api/video/${pelicula.video}`}
               />
             </video>
 

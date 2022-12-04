@@ -9,7 +9,7 @@ const Header = () => {
   const [categorias, setCategorias] = useState([]);
 
   //consultar la foto del usuario logueado.
-  let rutaFoto = "http://localhost:3001/api/avatar/";
+  let rutaFoto = "https://deployback-production-018f.up.railway.app/api/avatar/";
   const fotoUser = JSON.parse(localStorage.getItem('usuario'))[0].image;
   let foto = "";
 
@@ -20,7 +20,13 @@ const Header = () => {
   }
   
   useEffect(() => {
-    fetch("http://localhost:3001/api/categories")
+    fetch("https://deployback-production-018f.up.railway.app/api/categories", {
+      method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      },
+    })
       .then((response) => response.json())
       .then((data) => setCategorias(data.categories));
 

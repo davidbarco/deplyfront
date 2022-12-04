@@ -7,7 +7,13 @@ const Peliculas = () => {
   
   //cargar las peliculas al entrar al componente.
   useEffect(() => {
-    fetch("http://localhost:3001/api/movies")
+    fetch("https://deployback-production-018f.up.railway.app/api/movies", {
+      method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      },
+    })
       .then((response) => response.json())
       .then((data) => setPeliculas(data.movies));
     
@@ -31,7 +37,7 @@ const Peliculas = () => {
             }}
           >
             <img
-              src={`http://localhost:3001/api/image/${peliculas.image}`}
+              src={`https://deployback-production-018f.up.railway.app/api/image/${peliculas.image}`}
               
               className="card-img-top"
               alt={peliculas.name}
