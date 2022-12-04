@@ -57,7 +57,7 @@ const MisDatos = () => {
         "email":email
     });
     
-    let response = await fetch("http://localhost:3001/api/update", { 
+    let response = await fetch("https://deployback-production-018f.up.railway.app/api/update", { 
       method: "PUT",
       body: bodyContent,
       headers: headersList

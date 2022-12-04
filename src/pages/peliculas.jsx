@@ -24,7 +24,7 @@ const Peliculas = () => {
     <>
       <div
         className="peliculas"
-        style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", padding: "80px" }}
+        style={{}}
       >
         {peliculas.map((peliculas) => (
           <div
@@ -37,7 +37,7 @@ const Peliculas = () => {
             }}
           >
             <img
-              src={`https://deployback-production-018f.up.railway.app/api/image/${peliculas.image}`}
+              src={`https://res.cloudinary.com/dcxg91rkw/image/upload/v1670168351/${peliculas.image}`}
               
               className="card-img-top"
               alt={peliculas.name}

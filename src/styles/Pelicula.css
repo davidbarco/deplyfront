@@ -1,0 +1,33 @@
+
+.peliculas{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 80px;
+    padding-top: 150px;
+}
+
+.card{
+    width: 85%;
+    margin: 30px;
+    box-shadow: 0px 0px 14px 3px #5d14a6a8;
+}
+
+
+@media (max-width: 440px) {
+    .card {
+        /* width: 66%; */
+        width: 100%;
+      }
+      
+      
+      .peliculas {
+        padding: 0px;
+        width: 100%;
+        padding-top: 100px;
+        justify-content: center;
+      }
+
+}
+
+  

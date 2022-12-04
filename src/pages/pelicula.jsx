@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "../styles/Pelicula.css";
 
 const Pelicula = () => {
   const [pelicula, setPelicula] = useState([]);
@@ -24,21 +25,17 @@ const Pelicula = () => {
     <>
       <div
         className="peliculas"
-        style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", padding: "80px"  }}
+        style={{}}
       >
         {pelicula.map((pelicula) => (
           <div
             key={pelicula.id}
             className="card"
-            style={{
-              width: "66%",
-              margin: "30px",
-              boxShadow: "0px 0px 14px 3px #5d14a6a8",
-            }}
+            style={{}}
           >
-            <video width="100%" height="100%" controls poster={`https://deployback-production-018f.up.railway.app/api/image/${pelicula.image}`}>
+            <video width="100%" height="100%" controls poster={`https://res.cloudinary.com/dcxg91rkw/image/upload/v1670168351/${pelicula.image}`}>
               <source
-                src={`https://deployback-production-018f.up.railway.app/api/video/${pelicula.video}`}
+                src={`https://res.cloudinary.com/dcxg91rkw/video/upload/v1670168736/${pelicula.video}`}
               />
             </video>
 
